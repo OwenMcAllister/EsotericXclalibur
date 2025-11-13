@@ -2,7 +2,7 @@
 An esoteric implementation of the Xcalibur programming language. AKA ExLang.
 
 # Model of Computation Overview
-Esoteric Xcalibur uses an unbounded stack based model of computation to acheive turing completeness.
+Esoteric Xcalibur uses an unbounded LIFO stack based model of computation to acheive turing completeness.
 
 Integer literals are unsigned and unbounded.
 
@@ -22,7 +22,7 @@ Fetch instruction at pc, mutate the stack, then advance pc unless control flow e
 5. Subtract: Same convention as Add
 6. JumpZ L: Pop top of stack x, if x is 0 set pc to label L, otherwise advance pc
 7. Jump L: Jump unconditionally to some label L, set pc to L
-8. Out: Pop and print top of stack
+8. Out: Pop and print the lowest 8 bits of top of stack x as a character, chr(x & 0xFF)
 9. Halt: Stop execution
 
 Addtional stack opperations can be composed from these core 9. 
