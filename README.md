@@ -57,7 +57,9 @@ Whitespace and newline characters are ignored, but *may* be included for readabi
     The tokens between the two '::' markers are taken *verbatim* as the label name.
 
     Example:
+
         :: techx techx ::
+
     defines a label with the name "techx techx".
 
 - 'via ad excellentiam' halts execution.
@@ -66,13 +68,16 @@ Whitespace and newline characters are ignored, but *may* be included for readabi
 **Instruction Shape:**
 
 For instructions with parameters:
-k occurences of 'tech' ':' parameter 1 ':' parameter 2 'x'
+
+- k occurences of 'tech' ':' parameter 1 ':' parameter 2 'x'
 
 For instructions with no parameters:
 
-k occurences of 'tech' 'x'
+- k occurences of 'tech' 'x'
 
 
 **A fully formed EXLang instruction:**
 
-'tech : techx techx x' = push an integer value of 2 onto the stack.
+    tech : techx techx x
+
+pushes an integer value of 2 onto the stack.
