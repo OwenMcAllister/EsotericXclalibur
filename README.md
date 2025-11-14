@@ -15,8 +15,8 @@ Fetch instruction at pc, mutate the stack, then advance pc unless control flow e
 # Stack Opperations
 1. Push n: Push an integer n onto the stack
 2. Duplicate: Duplicate the top element on the stack
-3. Swap: Swap two elements
-4. Add: Pop element B then A and push A + B
+3. Swap: Swap top two stack elements
+4. Add: Adds top two stack elements. Pop element B then A and push A + B
 5. Subtract: Same convention as Add
 6. JumpZ L: Pop top of stack x, if x is 0 set pc to label L, otherwise advance pc
 7. Jump L: Jump unconditionally to some label L, set pc to L
