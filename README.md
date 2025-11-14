@@ -4,8 +4,6 @@ An esoteric implementation of the Xcalibur programming language. AKA ExLang.
 # Model of Computation Overview
 Esoteric Xcalibur uses an unbounded LIFO stack based model of computation to acheive turing completeness.
 
-Integer literals are unsigned and unbounded.
-
 # State
 - Data stack of unbounded integers
 - Program counter
@@ -42,7 +40,7 @@ Whitespace and newline characters are ignored, but *may* be included for readabi
     - 3 * 'tech' = swap
     - etc
 
-- 'techx' represents a 1 positive base 10 integer value.
+- 'techx' represents a 1 positive base 10 integer value. Arithmetic opperations can be used to calculate negatives and large numbers.
     - 'techx' = 1
     - 'techx techx' = 2
     - etc
