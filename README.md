@@ -51,14 +51,14 @@ Whitespace and newline characters are ignored, but *may* be included for readabi
 
         :: <label_name> ::
 
-    The label_name is any non-empty sequence of tokens drawn from {x, tech, techx}.
-    The tokens between the two '::' markers are taken *verbatim* as the label name.
+    The label_name is any non-empty sequence of 'techx' tokens.
+    The tokens between the two '::' markers are taken *verbatim* as the label name.Whitespace is ignored.
 
     Example:
 
         :: techx techx ::
 
-    defines a label with the name "techx techx".
+    defines a label with the name "techxtechx".
 
 - 'via ad excellentiam' halts execution.
 

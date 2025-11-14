@@ -54,3 +54,7 @@ class StackMachine:
 
     def out(self):
         print(self.data_stack.pop())
+
+
+    def addToLabelTable(self, program_counter_val: int, label: str):
+        self.label_table[label] = program_counter_val
