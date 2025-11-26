@@ -34,7 +34,7 @@ class StackMachine:
 
     def subtract(self):
         if not self.data_stack:
-            raise IndexError("Cannot add from empty stack")
+            raise IndexError("Cannot subtract from empty stack")
 
         value1 = self.data_stack.pop()
         self.data_stack[len(self.data_stack) - 1] -= value1
@@ -53,8 +53,7 @@ class StackMachine:
         self.pc = self.label_table.get(label)
 
     def out(self):
-        print(self.data_stack.pop())
-
+        print(chr(self.data_stack.pop()), end="")
 
     def addToLabelTable(self, program_counter_val: int, label: str):
         self.label_table[label] = program_counter_val

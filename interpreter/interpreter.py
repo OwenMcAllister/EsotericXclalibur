@@ -10,21 +10,40 @@ def main():
     with open(program_path, "r") as file:
         program = file.read().replace('\n','').replace(' ','')
 
-    Machine = StackMachine()
-    halt = False
+    program_parsed = {}
+    machine = StackMachine()
 
-def parseInstruction(Machine: StackMachine, instruction: str, program_counter: int):
+    current_read = ""
+    index = 0
+
+    while True:
+
+        if "viaadexcellentiam" in current_read:
+            break
+
+        if "techxx" in current_read or "techx::" in current_read or "techtechx" in current_read:
+            parseInstruction(machine, current_read)
+            program_parsed[machine.program_counter] = current_read
+
+            current_read = ""
+            machine.program_counter += 1
+
+        else:
+            current_read += program[index]
+            index +=1
+
+def parseInstruction(Machine: StackMachine, instruction: str):
 
     if instruction[0:2] == "::":
         label: str = ""
 
-        for character in instruction:
+        for character in instruction[2:]:
             if character == ":":
                 break
             else:
                 label += character
 
-        Machine.addToLabelTable(program_counter, label)
+        Machine.addToLabelTable(StackMachine.program_counter, label)
 
     else:
         operation: str = ""
@@ -66,8 +85,6 @@ def parseInstruction(Machine: StackMachine, instruction: str, program_counter: i
 
         elif opcode == 8:
             Machine.out()
-            
-Machine = StackMachine()
-parseInstruction(Machine, "techtechtechtechtechtech:techxtechxx", 2)
-# main()
+
+main()
 
