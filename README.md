@@ -4,8 +4,6 @@ An esoteric implementation of the Xcalibur programming language. AKA ExLang.
 # Model of Computation Overview
 Esoteric Xcalibur uses an unbounded LIFO stack based model of computation to acheive turing completeness.
 
-Integer literals are unsigned and unbounded.
-
 # State
 - Data stack of unbounded integers
 - Program counter
@@ -15,10 +13,10 @@ Integer literals are unsigned and unbounded.
 Fetch instruction at pc, mutate the stack, then advance pc unless control flow explicitly sets it.
 
 # Stack Opperations
-1. Push n: Push an integer n onto the stack
+1. Push n: Push an integer n onto the stack. Push instruction with no parameter pushes a 0 to the stack
 2. Duplicate: Duplicate the top element on the stack
-3. Swap: Swap two elements
-4. Add: Pop element B then A and push A + B
+3. Swap: Swap top two stack elements
+4. Add: Adds top two stack elements. Pop element B then A and push A + B
 5. Subtract: Same convention as Add
 6. JumpZ L: Pop top of stack x, if x is 0 set pc to label L, otherwise advance pc
 7. Jump L: Jump unconditionally to some label L, set pc to L
@@ -42,7 +40,7 @@ Whitespace and newline characters are ignored, but *may* be included for readabi
     - 3 * 'tech' = swap
     - etc
 
-- 'techx' represents a 1 positive base 10 integer value.
+- 'techx' represents a 1 positive base 10 integer value. Arithmetic opperations can be used to calculate negatives and large numbers.
     - 'techx' = 1
     - 'techx techx' = 2
     - etc
@@ -53,14 +51,14 @@ Whitespace and newline characters are ignored, but *may* be included for readabi
 
         :: <label_name> ::
 
-    The label_name is any non-empty sequence of tokens drawn from {x, tech, techx}.
-    The tokens between the two '::' markers are taken *verbatim* as the label name.
+    The label_name is any non-empty sequence of 'techx' tokens.
+    The tokens between the two '::' markers are taken *verbatim* as the label name.Whitespace is ignored.
 
     Example:
 
         :: techx techx ::
 
-    defines a label with the name "techx techx".
+    defines a label with the name "techxtechx".
 
 - 'via ad excellentiam' halts execution.
 
