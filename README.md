@@ -13,7 +13,7 @@ Esoteric Xcalibur uses an unbounded LIFO stack based model of computation to ach
 Fetch instruction at pc, mutate the stack, then advance pc unless control flow explicitly sets it.
 
 # Stack Opperations
-1. Push n: Push an integer n onto the stack
+1. Push n: Push an integer n onto the stack. Push instruction with no parameter pushes a 0 to the stack
 2. Duplicate: Duplicate the top element on the stack
 3. Swap: Swap top two stack elements
 4. Add: Adds top two stack elements. Pop element B then A and push A + B

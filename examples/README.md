@@ -19,3 +19,12 @@ tech : <72×techx> x
 tech tech tech tech tech tech tech tech x
 
 etc.
+
+
+# Forward Jump
+
+skips to label techxtechx, prints y
+
+# JumpZ Branch
+
+Prints A01
