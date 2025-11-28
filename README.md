@@ -13,7 +13,7 @@ Esoteric Xcalibur uses an unbounded LIFO stack based model of computation to ach
 Fetch instruction at pc, mutate the stack, then advance pc unless control flow explicitly sets it.
 
 # Stack Opperations
-1. Push n: Push an integer n onto the stack. Push instruction with no parameter pushes a 0 to the stack
+1. Push n: Push an integer n onto the stack
 2. Duplicate: Duplicate the top element on the stack
 3. Swap: Swap top two stack elements
 4. Add: Adds top two stack elements. Pop element B then A and push A + B
@@ -40,7 +40,8 @@ Whitespace and newline characters are ignored, but *may* be included for readabi
     - 3 * 'tech' = swap
     - etc
 
-- 'techx' represents a 1 positive base 10 integer value. Arithmetic opperations can be used to calculate negatives and large numbers.
+- 'techx' represents a 1 positive base 10 integer value. 0 is represented by an empty string ''. Arithmetic opperations can be used to calculate negatives and large numbers.
+    - '' = 0
     - 'techx' = 1
     - 'techx techx' = 2
     - etc
@@ -67,7 +68,7 @@ Whitespace and newline characters are ignored, but *may* be included for readabi
 
 For instructions with parameters:
 
-- k occurences of 'tech' ':' parameter 1 ':' parameter 2 'x'
+- k occurences of 'tech' ':' parameter' 'x'
 
 For instructions with no parameters:
 
