@@ -45,7 +45,7 @@ Whitespace and newline characters are ignored, but *may* be included for readabi
     - 'techx techx' = 2
     - etc
 
-- ':' is used to seperate parameters from instructions and parameters from eachother, as well as define labels.
+- ':' is used to seperate parameters from instructions and to define labels.
 
     Two ':' characters in succession, written '::', introduce and close a label definition:
 
