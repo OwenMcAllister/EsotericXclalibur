@@ -1,4 +1,4 @@
-# EsotericXclalibur
+# EsotericXcalibur
 An esoteric implementation of the Xcalibur programming language. AKA ExLang.
 
 # Model of Computation Overview
